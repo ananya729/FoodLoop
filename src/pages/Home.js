@@ -15,16 +15,37 @@ function Home({ user }) {
           <FoodList user={user} />
         </>
       ) : (
-        <>
+<>
   <p>Please login or signup to share food.</p>
 
   <div style={{ marginBottom: "20px" }}>
     <Link to="/login">
-      <button style={{ marginRight: "10px" }}>Login</button>
+      <button
+        style={{
+          padding: "10px 20px",
+          backgroundColor: "black",
+          color: "white",
+          border: "none",
+          cursor: "pointer",
+          marginRight: "10px"
+        }}
+      >
+        Login
+      </button>
     </Link>
 
     <Link to="/signup">
-      <button>Signup</button>
+      <button
+        style={{
+          padding: "10px 20px",
+          backgroundColor: "green",
+          color: "white",
+          border: "none",
+          cursor: "pointer"
+        }}
+      >
+        Signup
+      </button>
     </Link>
   </div>
 
