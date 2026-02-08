@@ -2,7 +2,7 @@ import AddFood from "../components/AddFood";
 import FoodList from "../components/FoodList";
 import { Link } from "react-router-dom";
 
-function Home({ user }) {
+function Home({ user, onLogout }) {
   return (
     <div style={{ padding: "40px" }}>
       <h1>🍽️ FoodLoop</h1>
@@ -10,6 +10,14 @@ function Home({ user }) {
       {user ? (
         <>
           <p>Welcome, {user.email}</p>
+
+          <button
+            onClick={onLogout}
+            style={{ marginBottom: "20px" }}
+          >
+            Logout
+          </button>
+
           <AddFood user={user} />
           <hr />
           <FoodList user={user} />
