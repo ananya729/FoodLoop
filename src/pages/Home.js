@@ -1,10 +1,7 @@
 import AddFood from "../components/AddFood";
 import FoodList from "../components/FoodList";
-import { useNavigate } from "react-router-dom";
 
 function Home({ user }) {
-  const navigate = useNavigate();
-
   return (
     <div style={{ padding: "40px" }}>
       <h1>🍽️ FoodLoop</h1>
@@ -18,36 +15,46 @@ function Home({ user }) {
         </>
       ) : (
         <>
-          <p>Please login or signup to share food.</p>
+          {/* 🔴 DEBUG PROOF SECTION */}
+          <h2
+            style={{
+              color: "red",
+              fontSize: "32px",
+              border: "4px solid red",
+              padding: "10px",
+              marginBottom: "20px"
+            }}
+          >
+            🔴 DEBUG: HOME.JS UPDATED
+          </h2>
 
-          <div style={{ marginBottom: "20px" }}>
+          <p style={{ fontSize: "20px" }}>
+            If you see this red box, your Home.js changes ARE live.
+          </p>
+
+          <div
+            style={{
+              border: "5px solid red",
+              padding: "20px",
+              marginBottom: "20px",
+              backgroundColor: "#ffecec"
+            }}
+          >
+            <p style={{ fontSize: "24px", marginBottom: "10px" }}>
+              LOGIN BUTTON SHOULD BE VISIBLE BELOW
+            </p>
+
             <button
-              onClick={() => navigate("/login")}
               style={{
-                padding: "10px 20px",
+                padding: "20px 40px",
+                fontSize: "24px",
                 backgroundColor: "black",
                 color: "white",
                 border: "none",
-                cursor: "pointer",
-                marginRight: "10px",
-                fontSize: "16px"
+                cursor: "pointer"
               }}
             >
-              Login
-            </button>
-
-            <button
-              onClick={() => navigate("/signup")}
-              style={{
-                padding: "10px 20px",
-                backgroundColor: "green",
-                color: "white",
-                border: "none",
-                cursor: "pointer",
-                fontSize: "16px"
-              }}
-            >
-              Signup
+              LOGIN
             </button>
           </div>
 
