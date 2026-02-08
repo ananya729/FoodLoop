@@ -1,5 +1,6 @@
 import AddFood from "../components/AddFood";
 import FoodList from "../components/FoodList";
+import { Link } from "react-router-dom";
 
 function Home({ user }) {
   return (
@@ -15,9 +16,21 @@ function Home({ user }) {
         </>
       ) : (
         <>
-          <p>Please login or signup to share food.</p>
-          <FoodList user={user} />
-        </>
+  <p>Please login or signup to share food.</p>
+
+  <div style={{ marginBottom: "20px" }}>
+    <Link to="/login">
+      <button style={{ marginRight: "10px" }}>Login</button>
+    </Link>
+
+    <Link to="/signup">
+      <button>Signup</button>
+    </Link>
+  </div>
+
+  <FoodList user={user} />
+</>
+
       )}
     </div>
   );
